@@ -1,3 +1,10 @@
+## Running the project
+- downlad the files named in ***# data source*** and keep them in the project folder with .cpp and .h files.
+- run the c++ file. <br><br>
+ ***Note:*** These tsv files from idmb are quite large. Rather read the c++ code or see the data structure of IDMB tsv files and make your own tsv files/file entries. 
+
+
+
 ## Explaination
 - suppose each movie has a score, and score of the person is addition of scores of his movies. This is the basic logic (depth/indirection 1).
 - now if we extend the logic.. the score of the preson is sum of scores of movies of people that participated in the movie with the person(depth/indirection 2).
