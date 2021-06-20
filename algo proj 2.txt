@@ -1,0 +1,55 @@
+
+Question statement--} you are given file with Persons id. each movie has score acc to rating. You have to calculate person's score based on how many movies they participated (sum of scores of movies participated in). If level of indirection(depth) is >1 you need to add to that score, all the scores of movies of People, who were in those movies (the previous person participated in) and so on until the indirection(depth) condition is satisfied. the output is to be saved in output.tsv
+
+
+rough logic
+
+	Person id - all movie that person was in - movies had n people - all movies those n people were in ...
+
+	[People] -> people[peopleID].movies (vector array of string movie ID) -> += each score of movie[Score<-adjustedScoreOnYear((1+Movie.Genre)*Rating.rating*Rating.votes)] (indirection check)-> n people(id) -n*-> people[peopleID].movies ....
+
+
+
+//conditions
+people need to be in movies that exist in Movies, which have ratings which need to be in MovieRatings
+movie should have info about people(<- given by Principle)
+- any missing variable in dataset should be handled
+- each step requires a function call which does the handling
+
+
+//functions
+
+--setup
+
+loadPeople() -> map peopleID - People
+
+loadMovies() -> map movieID - Movie
+
+loadPrincipal() -> multimap movieID - peopleID
+
+loadPeopleinMovie() -> finds Movie in map and adds peopleID to each Movie (missing movie will skip the logic// by default movie.people<string pplID> is set to empty)
+
+loadRatings() -> adds rating, votes to the movie (by default rating set to 0) (missing movie will skip the logic)
+//because scores are strictly based on rating votes and movie genere it can be calculated there itself
+
+call outputInFIle() to get the output file.
+
+
+--logic
+
+getScore(PeopleID, indirection){
+
+	for(people in peopleID vector array){
+            find Person class person from mapPerson
+            for(each movie of person){
+                find Movie class movie from mapMovie
+                if(indirection-1>0) getScore(movie.getPeople(), indirection-1)   // not if at the bottom level of tree find its children at indirection - 1
+                   else totalscore += movie.score                               // at the bottom of the tree then add them (refer tree image )
+            }
+        }
+
+}
+
+0utputInFIle(){
+    open fstream and insert person id and then getScore(personID, indirection) values;
+}
