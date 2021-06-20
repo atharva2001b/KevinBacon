@@ -1,5 +1,5 @@
 ## Explaination
-- suppose each movie has a score, and score of the person is addition of scores of his movies of that person. This is the basic logic.
+- suppose each movie has a score, and score of the person is addition of scores of his movies. This is the basic logic.
 - now if we extend the logic.. the score of the preson is sum of scores of movies of people that participated in the movie with the person.
 - now a tree starts forming of movies and people, where root node being the perosn whose score we want to find given depth of the tree.
 
