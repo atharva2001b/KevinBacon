@@ -11,6 +11,11 @@
 - fstream can be used to write to output file
 - sstream can be used to break the strings into relevant data (Data Analysis)
 
+## Flowchart 
+- for reference
+![kevin_bacon_implementation_flowchart](https://user-images.githubusercontent.com/75652387/122684073-0be14b00-d221-11eb-927f-0cd252008fc4.jpg)
+
+
 ## Data Source
 - one can get below files from IDMB website (https://www.imdb.com/interfaces/)
 - Four files are used:
@@ -31,4 +36,3 @@ they had.
 
 ## Note:
 - Read readme.txt for more clear understanding.
-
