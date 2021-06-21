@@ -427,7 +427,7 @@ void main(int argc, const char* argv[]){
 	cout << endl << "-------------------------------" << endl<<endl;
 
 
-	bool addResonableScore = false; //add only scores > 0
+	bool addResonableScore = true; //add only scores > 0
 
 	//create output file of all people for given indirection 
 	//change cmd line args to set indirection
